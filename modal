@@ -1,0 +1,21 @@
+		<!-- view game modal -->
+		<div class="modal fade" id="viewGameModal" tabindex="-1" role="dialog" aria-labelledby="viewGameModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<!--Content-->
+				<div class="modal-content modal-gameinfo">
+					<!--Header-->
+					<div class="modal-header">
+						<h4 class="modal-title" id="viewGameModalLabel">HEADING</h4> 
+					<div class="modal-body">
+						<p>DESCRIPTION</p>
+					</div>
+					<!--Footer-->
+					<div class="modal-footer">
+						
+						<button type="button" class="btn pull-right" data-dismiss="modal">Dismiss</button>
+						
+					</div>
+				</div>
+				<!--/.Content-->
+			</div>
+		</div>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>DSRack Lancher</title>
+	    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="styles/bootstrap.min.css" rel="stylesheet">
+
+    <link href="styles/mdb.min.css" rel="stylesheet">
+    
+    <link href="styles/style.css" rel="stylesheet">
+	
+    <link href="styles/custom.css" rel="stylesheet">
+	
+</head>
+
+<body>
+
+    <header>
+		<nav class="navbar navbar-dark primary-color-dark navbar-fixed-top dropshadow-light">
+			
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-3">
+						<a class="navbar-brand" href="games.html">DSRack Esportscafé</a>
+					</div>
+					
+					<div class="col-md-6">
+						
+						<div class="pull-left">
+							<form class="form-inline" role="form">
+								<input class="form-control" style="width: 302px" type="text" placeholder="Search" v-model="searchQuery">
+							</form>
+						</div>
+
+						<div class="dropdown genre">
+							<button class="btn dropdown-toggle" type="button" id="dropDownGenre" 
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ btnGenreName }}</button>
+							<div class="dropdown-menu" aria-labelledby="dropDownGenre">
+								<a class="dropdown-item" v-for="g in genres" @click="setGenre(g)">
+									{{ g.text }}
+								</a>
+							</div>
+						</div>
+						
+						<div class="dropdown mode">
+							<button class="btn dropdown-toggle" type="button" id="dropDownMode" 
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ btnModeName }}</button>
+							<div class="dropdown-menu" aria-labelledby="dropDownMode">
+								<a class="dropdown-item" v-for="m in modes" @click="setMode(m)">
+									{{ m.text }}&nbsp;&nbsp;<i class="{{ m.icon }}" aria-hidden="true"></i>
+								</a>
+							</div>
+						</div>
+						
+					</div>
+					
+					<div class="col-md-3">
+						
+						<div class="options">
+							<a href="#!" class="btn btn-reset" @click="reset">Reset search</a>
+
+							<!-- Button trigger modal -->
+							<button type="button" class="btn" data-toggle="modal" data-target="#logoutModal">
+								<i class="fa fa-sign-out" aria-hidden="true"></i>
+							</button>
+
+						</div>
+								
+					</div>
+				</div>
+			</div>
+			<!--./container-->
+		</nav>
+    </header>
+	
+    <main>
+        <div class="container">
+            <div class="row">
+                <gamecard :subject="i" v-for="i in gameData | searchTitle searchQuery | genres selectedGenre | modes selectedMode | visible | orderBy 'name'"></gamecard>
+            </div>
+			<!--<gamecardmodal></gamecardmodal>-->
+        </div>
+    </main>
+
+
+	<!-- -->
+
+
+	<!-- logout modal -->
+	<div class="modal fade modal-logout" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
+		<div class="modal-dialog logout-dialog" role="document">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<h4 class="modal-title" id="logoutModalLabel">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></h4>
+				</div>
+
+				<div class="modal-body">
+					<p>Are you sure?</p>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn pull-right" data-dismiss="modal">No</button>
+					
+					<form action="login.html" method="POST">
+						<button type="submit" class="btn">Yes</button>						
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+    <template id="gameCard">
+        <div class="col-md-3">
+			
+            <div class="card dropshadow-heavy">
+                <!-- v-bind:src="" :src="" -->
+                <img src="images/cover_images/{{ subject.name }}.png" class="img-fluid" alt="">
+                <div class="card-block">
+                    <!--<span style="display: none">{{ cursorLength = $index }}</span>-->
+                    <div class="play pull-right">
+                        <a href="#!" @click="storeGameInfo" class="btn btn-play dropshadow-heavy">Play</a>
+						
+                    </div>
+
+                    <p class="card-title">{{ subject.display_name }}</p>
+                </div>
+
+            </div>
+        </div>
+    </template>
+
+
+	<!--<template id="gameCardModal">-->
+		<div class="modal fade" id="viewGameModal" tabindex="-1" role="dialog" aria-labelledby="viewGameModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+
+					<div class="modal-header">
+						<h4 class="modal-title" id="viewGameModalLabel">{{ gameModalTitle }}</h4> 
+					<div class="modal-body">
+						<p>{{ gameModalDesc }}</p>
+					</div>
+					
+					<div class="modal-footer">
+						<button type="button" class="btn pull-right" data-dismiss="modal">Dismiss</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	<!--</template>-->
+
+
+	
+    <!-- SCRIPTS -->
+
+    <script type="text/javascript" src="scripts/jquery-2.2.3.min.js"></script>
+
+    <script type="text/javascript" src="scripts/tether.min.js"></script>
+    
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="scripts/mdb.min.js"></script>
+
+    <script type="text/javascript" src="scripts/vue.js"></script>
+    
+    <script type="text/javascript" src="scripts/gamelist.js"></script>
+	
+    <script type="text/javascript" src="scripts/preventKeyboardScroll.js"></script>
+	
+    <script type="text/javascript" src="scripts/vueapp.js"></script>
+
+	<script type="text/javascript">
+	// create the back to top button
+	$('body').prepend('<a href="#" class="back-to-top dropshadow-heavy">Back to Top</a>');
+
+	var amountScrolled = 1600;
+
+	$(window).scroll(function() {
+		if ( $(window).scrollTop() > amountScrolled ) {
+			$('a.back-to-top').fadeIn('slow');
+		} else {
+			$('a.back-to-top').fadeOut('slow');
+		}
+	});
+
+	$('a.back-to-top, a.simple-back-to-top').click(function() {
+		$('html, body').animate({
+			scrollTop: 0
+		}, 700);
+		return false;
+	});
+	</script>
+	
+</body>
+
+</html>

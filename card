@@ -1,0 +1,26 @@
+				<!-- row -->
+				<div class="row">
+					<!-- repeat -->
+					<div class="col-md-3" v-for="i in gameData | searchTitle searchQuery | genres selectedGenre | modes selectedMode | visible | orderBy 'name'">
+						<!-- card -->
+						<div class="card dropshadow-heavy">
+							<!-- v-bind:src="" :src="" -->
+							<img src="images/cover_images/{{i.name}}.png" class="img-fluid" alt="">
+							
+							<div class="card-block">
+								
+								<span style="display: none">{{ cursorLength = $index }}</span>
+								<div class="play pull-right">
+									<a href="#!" class="btn btn-play dropshadow-heavy">Play</a>
+								</div>
+
+								<p data-toggle="modal" data-target="#viewGameModal" class="card-title">{{ i.display_name }}</p>
+								
+							</div>
+
+						</div>
+						<!--./card-->
+					</div>
+					<!--./repeat-->
+				</div>
+				<!--./row-->	

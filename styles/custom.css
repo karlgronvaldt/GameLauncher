@@ -1,0 +1,325 @@
+main { 
+    background: #CDD1C4 url('../images/bg/bg_bf.jpg') no-repeat center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 100% auto;
+    margin-top: 0px;
+    padding-top: 60px;
+}
+
+main .container {
+    min-height: 980px;
+	margin-top: 35px;
+}
+
+nav {
+	height: 65px;
+}
+
+/* Search */
+::-webkit-input-placeholder { /* Chrome */
+	color: #fff !important;
+	text-transform: lowercase;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+	color: #fff !important;
+	text-transform: lowercase;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+	color: #fff !important;
+	text-transform: lowercase;
+}
+
+:-ms-input-placeholder {  /* IE */
+	color: #fff !important;
+	text-transform: lowercase;
+}
+
+input {
+	color: #fff !important;
+	text-transform: lowercase;
+}
+/*./Search */
+
+.rows {
+    padding-bottom: 10px;
+}
+
+.card {
+	box-shadow: 0 0px 20px rgba(0,0,0,0.8);
+	height: 502px;
+	width: 302px;
+}
+
+.card-block {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.card-block p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-top: 20px;
+	padding-bottom: 25px;
+}
+
+.card-title {
+	cursor: help;
+	margin: 0px;
+}
+
+.card img {
+	width: 100%;
+	height: 432px;
+	
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+	transition: all 1s ease;
+
+	-webkit-filter: brightness(75%);
+	-moz-filter: brightness(75%);
+	-o-filter: brightness(75%);
+	filter: brightness(75%);
+}
+
+.card img:hover {
+	-webkit-filter: brightness(105%);
+	-moz-filter: brightness(105%);
+	-o-filter: brightness(105%);
+	filter: brightness(105%);
+}
+
+.dropshadow-light {
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.dropshadow-heavy {
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	transition: all 1s ease;
+}
+
+.dropshadow-heavy:hover {
+	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+/* Play button */
+.btn-play {
+	position: relative;
+    height: 55px;
+	bottom: 30px;
+    width: 55px;
+    line-height: 2.8	;
+    padding-left: 12px;
+	margin: 0px;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.dropdown {
+	float: right;
+}
+
+.options {
+	float: right;
+}
+.options a {
+	background-color: #5B2F2F !important;
+}
+
+/* container width */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1360px;
+  }
+}
+
+/* back to top */
+a.back-to-top {
+	display: none;
+	width: 60px;
+	height: 60px;
+	text-indent: -9999px;
+	position: fixed;
+	z-index: 999;
+	right: 20px;
+	bottom: 20px;
+	background: #4D5061 url("../images/up-arrow.png") no-repeat center 43%;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+a:hover.back-to-top {
+	background-color: #30323D;
+}
+
+/* * Color scheme * */
+.primary-color-dark {
+  background-color: #30323D !important;
+}
+
+button {
+	background-color: #5B2F2F !important;
+}
+
+.btn-play {
+	background-color: #30323D !important;
+}
+.btn-play:hover {
+	background-color: #4D5061 !important;
+}
+.btn-play:active {
+	background-color: #4D5061 !important;	
+}
+.btn-play:visited {
+	background-color: #30323D !important;
+}
+
+.card {
+	background-color: #5B2F2F;
+	color: #fff;
+}
+
+/********** TABLE **********/
+
+table {
+	background-color: #4D5061;
+	color: #000;
+}
+
+
+/********** LOGIN **********/
+
+.h1-responsive {
+	text-align: center;
+}
+
+.card-login {
+	width: 100%;
+	background-color: #5B2F2F;
+	height: 380px;
+}
+
+.card-image {
+	height: 100px;
+	text-align: center;
+	padding-top: 25px;
+	margin-bottom: 20px;	
+}
+
+.btn-login {
+	display: block;
+	margin: 40px auto;
+	background-color: #30323D !important;
+}
+.btn-login:hover {
+	background-color: #4D5061 !important;
+}
+.btn-login:active {
+	background-color: #4D5061 !important;	
+}
+.btn-login:visited {
+	background-color: #30323D !important;
+}
+
+.md-form label {
+	color: #fff !important;
+}
+
+
+/****** MODAL ******/
+.modal {
+	margin: 0 auto;
+}
+
+.modal-dialog {
+	margin-top: 115px;
+	width: 1280px;
+	height: 900px;
+}
+
+/** MODAL LOGOUT**/
+/*.modal-logout {
+	width: 330px;
+}*/
+
+/** MODAL GAMEINFO **/
+
+
+
+
+
+
+
+
+/************* MODAL TEST *************/
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: table;
+  transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-container {
+  width: 300px;
+  margin: 0px auto;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+  transition: all .3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.modal-header h3 {
+  margin-top: 0;
+  color: #42b983;
+}
+
+.modal-body {
+  margin: 20px 0;
+}
+
+.modal-default-button {
+  float: right;
+}
+
+/*
+ * the following styles are auto-applied to elements with
+ * v-transition="modal" when their visiblity is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter, .modal-leave {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
